@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,16 +14,18 @@ public class CanzoniAdapter extends RecyclerView.Adapter<CanzoniAdapter.MyViewCa
 
     ArrayList<Canzone> arrayCanzone;
     Context mContext;
+    LayoutInflater inflater;
 
-    public CanzoniAdapter(Context mContext,ArrayList<Canzone> arrayCanzone) {
-        this.arrayCanzone = arrayCanzone;
+    public CanzoniAdapter(Context mContext,ArrayList<Canzone> arrayList) {
+        this.arrayCanzone = arrayList;
         this.mContext = mContext;
+        this.inflater = LayoutInflater.from(mContext);
     }
 
     @NonNull
     @Override
     public CanzoniAdapter.MyViewCanzoniHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new MyViewCanzoniHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.element_album, parent, false));
+        return new MyViewCanzoniHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.element_canzoni, parent, false));
     }
 
     @Override

@@ -38,7 +38,7 @@ public class HomeActivity extends AppCompatActivity {
         canzoniArrayList.add(new Album("Endkadenz Vol.2","2015", "Album",R.drawable.endkadenz2));
         canzoniArrayList.add(new Album("Verdena (20th Anniversary Remastered Edition)","2019", "Album",R.drawable.verdena20));
 
-        RecyclerAdapter adapter = new RecyclerAdapter(this,canzoniArrayList);
+        AlbumAdapter adapter = new AlbumAdapter(this,canzoniArrayList);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this,1, RecyclerView.VERTICAL,false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());

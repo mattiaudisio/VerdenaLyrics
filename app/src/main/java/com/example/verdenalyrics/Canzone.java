@@ -1,6 +1,11 @@
 package com.example.verdenalyrics;
 
-public class Canzone {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
+public class Canzone implements Serializable {
     String titles;
     String testo;
 
@@ -9,8 +14,10 @@ public class Canzone {
         this.testo = testo;
     }
 
-    public Canzone(String titles) {
-        this.titles = titles;
+
+    protected Canzone(Parcel in) {
+        titles = in.readString();
+        testo = in.readString();
     }
 
     public String getTitles() {
@@ -28,4 +35,5 @@ public class Canzone {
     public void setTesto(String testo) {
         this.testo = testo;
     }
+
 }
